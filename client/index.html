@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NodeJSPractice</title>
+</head>
+<body ng-app="GarageApp">
+	<h3>This is NodeJS Client Folder</h3>
+	<div ng-controller="GarageController as ctrl" class='container'>
+		
+
+		<label>Make:<input type='text' ng-model='ctrl.carA.make'></label><br/>
+		<label>Model:<input type='text' ng-model='ctrl.carA.model'></label><br/>
+		<label>Year:<input type='number' ng-model='ctrl.carA.year'></label><br/>
+
+		<span ng-bind='ctrl.carA.make'></span><br/>
+		<span ng-bind='ctrl.carA.model'></span><br/>
+		<span ng-bind='ctrl.carA.year'></span><br/>
+		
+		<label>Please select the initial value:</label><input type='number' ng-model='ctrl.carA.initialValue'/><span ng-bind='ctrl.carA.initialValue'></span>
+		<form name="myForm">
+	    <label for="userSelection">Select a condition:</label>
+	    <select name="userSelection" id="userSelection"
+	      ng-options="value.condition for value in ctrl.carA.valuesArray"
+	      ng-model="ctrl.carA.selectedOption">
+	    </select>
+  	</form>
+  	<span ng-bind="ctrl.carA.selectedOption.condition"></span>
+
+		<button ng-click='ctrl.setCondition(ctrl.carA.initialValue,ctrl.carA.selectedOption.multiplier)'>Select</button>
+
+		<button ng-click='ctrl.addCar(ctrl.carA.make, ctrl.carA.model, ctrl.carA.year, ctrl.carA.initialValue,ctrl.carA.selectedOption.condition)'>Add Car</button>
+		
+
+
+
+	
+
+
+
+
+
+
+
+
+
+	</div> <!--             End container div             -->
+	
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers/controllers.js"></script>
+	<script src="js/services/services.js"></script>
+	<script src="js/factories/factories.js"></script>
+</body>
+</html>
