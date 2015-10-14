@@ -5,9 +5,9 @@ angular.module("GarageApp")
 		function Car(){
 		
 		this.message = "hello from factory";
-		this.make = "";
-		this.model = "";
-		this.year = "";
+		// this.make = "";
+		// this.model = "";
+		// this.year = "";
 
 		this.valuesArray = [
 			{ name: "poorValue", condition: 'poor', multiplier: 0.5 },

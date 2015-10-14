@@ -9,9 +9,9 @@
 	<div ng-controller="GarageController as ctrl" class='container'>
 		
 
-		<label>Make:<input type='text' ng-model='ctrl.carA.make'></label><br/>
-		<label>Model:<input type='text' ng-model='ctrl.carA.model'></label><br/>
-		<label>Year:<input type='number' ng-model='ctrl.carA.year'></label><br/>
+		<label>Make: <input type='text' ng-model='ctrl.carA.make'></label><br/>
+		<label>Model: <input type='text' ng-model='ctrl.carA.model'></label><br/>
+		<label>Year: <input type='number' ng-model='ctrl.carA.year'></label><br/>
 
 		<span ng-bind='ctrl.carA.make'></span><br/>
 		<span ng-bind='ctrl.carA.model'></span><br/>
@@ -27,10 +27,22 @@
   	</form>
   	<span ng-bind="ctrl.carA.selectedOption.condition"></span>
 
-		<button ng-click='ctrl.setCondition(ctrl.carA.initialValue,ctrl.carA.selectedOption.multiplier)'>Select</button>
+		<!-- <button ng-click='ctrl.setCondition(ctrl.carA.initialValue,ctrl.carA.selectedOption.multiplier)'>Select</button>
 
-		<button ng-click='ctrl.addCar(ctrl.carA.make, ctrl.carA.model, ctrl.carA.year, ctrl.carA.initialValue,ctrl.carA.selectedOption.condition)'>Add Car</button>
-		
+		<button ng-click='ctrl.addCar(ctrl.carA.make, ctrl.carA.model, ctrl.carA.year, ctrl.carA.initialValue,ctrl.carA.selectedOption.condition)'>Add Car</button> -->
+
+
+		<button ng-click='ctrl.getInfo(ctrl.carA.make, ctrl.carA.model, ctrl.carA.year, ctrl.carA.selectedOption.condition, ctrl.carA.initialValue, ctrl.carA.selectedOption.multiplier)'>Add Car</button>
+
+
+
+
+		<table>
+			<tr><th>Make</th><th>Model</th><th>Year</th><th>Value</th><th>Condition</th><th>Current Value</th></tr>
+			<tr ng-repeat='car in ctrl.garageA.inGarageArray'><td ng-bind='car.make'></td><td ng-bind='car.model'></td><td ng-bind='car.year'></td><td ng-bind='car.value'></td><td ng-bind='car.condition'></td></tr>
+
+
+		</table>
 
 
 
