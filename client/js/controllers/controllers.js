@@ -2,11 +2,6 @@ angular.module("GarageApp")
 	.controller("GarageController", function (GarageFactory,CarFactory, GarageService){
 		var self = this;
 
-		// self.garageA = new GarageFactory;
-
-		// Tests below
-		// self.garageB = new GarageFactory;
-		// self.garageB.capacity = 10;
 		self.garageA = new GarageFactory;
 		self.carA = new CarFactory();
 		console.log(self.garageA.capacity);
